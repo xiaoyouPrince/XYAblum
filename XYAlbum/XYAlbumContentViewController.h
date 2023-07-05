@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Photos/Photos.h>
+#import "AlbumCallBack.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,6 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<XYAlbumContentControllerDelegate>delegate;
 @property (nonatomic, strong) PHAssetCollection *assetCollection;
 @property (nonatomic, strong) NSIndexPath *indexPath;
+
+/**callback */
+@property (nonatomic, strong) AlbumCallBack *albumCallback;
 
 @end
 

@@ -44,6 +44,8 @@
         lineView.backgroundColor = [UIColor.yellowColor colorWithAlphaComponent:0.5];
         [self.imageVoew addSubview:lineView];
         
+        lineView.frame = self.bounds;
+        
 //        [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
 //            make.edges.equalTo(self.imageVoew);
 //        }];

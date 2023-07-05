@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AlbumCallBack.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -30,6 +31,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface XYAlbumGroupViewController : UIViewController
 
 @property (nonatomic, weak) id<XYAlbumGroupViewControllerDelegate>delegate;
+
+/**callback */
+@property (nonatomic, strong) AlbumCallBack *albumCallback;
 
 @end
 

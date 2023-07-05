@@ -25,14 +25,20 @@
     return self;
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
-    
 }
 
+- (instancetype)initWithChooseImageCallback:(XYAlbumGetImageBlock)getImageBlock finishEditBlock:(XYAlbumGetImageBlock)finishEditBlock{
+    XYAlbumGroupViewController *group = [XYAlbumGroupViewController new];
+    self = [super initWithRootViewController:group];
+    AlbumCallBack *callback = [AlbumCallBack new];
+    callback.getImageBlock = getImageBlock;
+    callback.finishEditBlock = finishEditBlock;
+    group.albumCallback = callback;
+    return self;
+}
 
 @end
+
+

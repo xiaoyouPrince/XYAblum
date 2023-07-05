@@ -39,7 +39,16 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
+    // 设置按钮,如果是通过 pod 三方导入(因为资源bundle不同)
+    [self setupButtonImages];
+}
+
+
+- (void)setupButtonImages{
     // OC 三方引入资源文件,直接在xib中拿不到,这里手动处理一下
+    NSBundle *currentBundle = [NSBundle bundleForClass:self.class];
+    if (currentBundle == [NSBundle mainBundle]) { return; }
+    
     [self.backButton setImage:[self imageWithName:@"SR_WhiteBack@3x"] forState:UIControlStateNormal];
     [self.rotateButton setImage:[self imageWithName:@"sr_eidt_rotate_icon@3x"] forState:UIControlStateNormal];
     [self.horizontalButton setImage:[self imageWithName:@"sr_eidt_mirror_horizontal_icon@3x"] forState:UIControlStateNormal];
@@ -53,13 +62,17 @@
     NSString *imageBundlePath = [[currentBundle resourcePath] stringByAppendingPathComponent:@"XYAlbum.bundle"];
     NSBundle *imageBundle = [NSBundle bundleWithPath:imageBundlePath];
     NSString *imagePath = [imageBundle pathForResource:name ofType:@"png"];
-    
     return [UIImage imageNamed:imagePath];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (void)addViews{

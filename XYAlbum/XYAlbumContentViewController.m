@@ -150,6 +150,11 @@
     [[PHImageManager defaultManager] requestImageDataForAsset:phAsset options:options resultHandler:^(NSData * _Nullable imageData, NSString * dataUTI, UIImageOrientation orientation, NSDictionary * info) {
         //[SVProgressHUD dismiss];
         UIImage *image = [UIImage imageWithData:imageData];
+        
+        if (self.albumCallback){
+            self.albumCallback.getImageBlock(image);
+        }
+        
         XYEditViewController *vc = [[XYEditViewController alloc] initWithNibName:@"XYEditViewController" bundle:nil];
         vc.delegate = self;
         vc.image = image;
@@ -164,6 +169,10 @@
 {
     // 编辑完成 -- 图片发送给
     [NSNotificationCenter.defaultCenter postNotificationName:@"imageEidtFinish" object:image];
+    
+    if (self.albumCallback){
+        self.albumCallback.finishEditBlock(image);
+    }
     
 }
 

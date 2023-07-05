@@ -98,6 +98,7 @@
     vc.indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     vc.delegate = self;
     vc.assetCollection = assetCollection;
+    vc.albumCallback = self.albumCallback;
     [self.navigationController pushViewController:vc animated:NO];
     self.albumContentController = vc;
 }
