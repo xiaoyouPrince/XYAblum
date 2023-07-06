@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y79-jw-km8">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PT7-Lr-dWx">
                             <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -182,9 +182,9 @@
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="top" secondItem="Y79-jw-km8" secondAttribute="top" id="ArO-rz-tdp"/>
                 <constraint firstAttribute="trailing" secondItem="Y79-jw-km8" secondAttribute="trailing" id="BWj-Vu-ZgF"/>
                 <constraint firstItem="Y79-jw-km8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GUO-FN-tSe"/>
-                <constraint firstItem="Y79-jw-km8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YDQ-yA-EJr"/>
                 <constraint firstItem="hqr-Pb-LmT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hbf-Vp-KwN"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="hqr-Pb-LmT" secondAttribute="bottom" id="m08-hr-hVU"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="hqr-Pb-LmT" secondAttribute="trailing" id="v1M-iI-gyW"/>

@@ -77,7 +77,7 @@
 
 - (void)addViews{
     CGFloat top = [[UIApplication sharedApplication] statusBarFrame].size.height;
-    self.top.constant += top;
+    self.top.constant += 44;
     JPImageresizerConfigure *configure = [JPImageresizerConfigure defaultConfigureWithResizeImage:self.image make:^(JPImageresizerConfigure *configure) {
         configure.jp_contentInsets(UIEdgeInsetsMake(self.top.constant+44+10, 0, (20 + 50 + 20), 0));
     }];
@@ -118,6 +118,7 @@
         if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(imageEidtFinish:)]) {
             [weakSelf.delegate imageEidtFinish:resizeImage];
             [weakSelf dismissViewControllerAnimated:YES completion:nil];
+            [weakSelf popAction:nil];
         }
     }];
 }
